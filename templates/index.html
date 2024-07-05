@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    
+</head>
+
+<body>
+    <h1 id="title">Predicting Car Resale Prices: A Machine Learning Approach</h1>
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <div>
+            <h2>Predictive analysis</h2>
+            <label for="first">Year</label>
+            <input id="first" name="Year" type="number ">
+            </div>
+            <br><br>
+            <label for="second">What is the Showroom Price?(In lakhs)</label>
+            <input id="second" name="Present_Price" required="required"><br><br><br>
+            <label for="third">How Many Kilometers Drived?</label>
+            <input id="third" name="Kms_Driven" required="required"><br><br><br>
+            <label>How much owners previously had the car(0 or 1 or 3) ?</label>
+            <input id="fourth" name="Owner" required="required">
+            <br><br><br>
+            <label for="fuel">What Is the Fuel type?</label>
+            <select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <br><br><br>
+            <label for="resea">Are you A Dealer or Individual</label>
+                <select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <br><br><br>
+            <label for="research">Transmission type</label>
+            <select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select><br>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+        <br>
+        <br><br><h3>{{ prediction_text }} Lakhs<h3>
+    </div>
+
+
+
+
+    <style>
+        #title{
+            font-weight: bold;
+            font-size: 40px;
+            text-decoration: underline wavy plum 3px;
+        }
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+            background-image: url("https://i.pinimg.com/originals/de/0f/4b/de0f4bf6e8075312a6eb20ad7044571a.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 200px;
+            height: 70px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            background-color: black;
+            color:white
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        label{
+            font-size: 25px;
+            color: #800000;
+        }
+        input{
+            background-color: bisque;
+        }
+    </style>
+</body>
+
+</html>
